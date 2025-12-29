@@ -1,0 +1,114 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand: #3b8440;
+  --color-brand-dark: #2f6b33;
+
+  --color-primary: #01051e;
+  --color-primary-light: #020726;
+  --color-primary-dark: #010417;
+  --color-secondary: #ff7d3b;
+
+  --color-gray: #333;
+  --color-white: #fff;
+  --color-blob: #a427df;
+
+  --font-display: "Inter", sans-serif;
+  --breakpoint-3xl: 1920px;
+}
+
+@utility center {
+  @apply mx-auto;
+}
+
+@utility textxl {
+  @apply text-3xl font-bold;
+}
+
+@utility softshadow {
+  @apply shadow-lg shadow-black/10;
+}
+
+
+@layer components {
+  .page-container {
+    @apply max-w-7xl center px-5 md:px-12;
+  }
+
+  .btn-primary {
+    @apply bg-secondary px-9 py-3 rounded-md capitalize font-bold cursor-pointer transition-opacity hover:opacity-80;
+  }
+
+  .card_btn{
+    @apply w-full px-9 py-3 bg-primary-dark rounded-md capitalize font-bold hover:bg-secondary ease-in duration-200;
+  }
+
+  .nav-link {
+    @apply hover:text-secondary transition-colors duration-200;
+  }
+
+  .mobile-link {
+    @apply text-2xl font-semibold hover:text-secondary transition-colors;
+  }
+
+  .card {
+    perspective: 1000px;
+  }
+
+  .front, .back{
+    backface-visibility: hidden;
+    transition: all 0.4s ease;
+  }
+
+  .front{
+    overflow: hidden;
+  }
+
+  .card-title {
+    @apply textxl mb-2;
+  }
+
+  .title{
+    @apply text-3xl md:text-4xl font-bold leading-snug;
+  }
+
+  .blob-one{
+    @apply w-80 h-80 bg-blob absolute top-15 left-10 -z-10 blur-2xl opacity-30 overflow-hidden rounded-full;
+  }
+
+  .blob-two{
+    @apply w-80 h-80 bg-secondary absolute bottom-10 right-15 -z-10 blur-2xl opacity-20 overflow-hidden rounded-full;
+  }
+
+  .user-text{
+    @apply hidden;
+  }
+  
+  .user-text.active-text{
+    @apply block;
+    animation: moveup 1s linear forwards;
+  }
+  
+  .user-pic{
+    transition: all 0.2s ease;
+  }
+
+  .user-pic.active-pic{
+    @apply border-solid border-2 border-secondary;
+  }
+
+  @keyframes moveup{
+    0%{
+      margin-top: 40px;
+      opacity: 0;
+    }
+    50%{
+      margin-top: 20px;
+      opacity: 0.5;
+    }
+    100%{
+      margin-top: 0px;
+      opacity: 1;
+    }
+  }
+}
