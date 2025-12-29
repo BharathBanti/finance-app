@@ -42,7 +42,7 @@ This project demonstrates clean UI design, custom Tailwind plugins, and interact
 
 👉 **Live Site:**  
 
-https://your-username.github.io/repository-name/
+https://bharathbanti.github.io/finance-app/
 
 
 ## 📌 Notes
